@@ -2,3 +2,4 @@ fastapi
 uvicorn
 prometheus_client
 kafka-python-ng
+psycopg[pool]

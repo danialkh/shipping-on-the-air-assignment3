@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.6.1
@@ -30,8 +32,15 @@ services:
       - "8001:8001"
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      # --- PostgreSQL Connections Added ---
+      POSTGRES_HOST: postgres-db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: shipping_records
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secretpassword
     depends_on:
       - kafka
+      - postgres-db
 
   shipment-orchestrator:
     build: ./services/shipment_orchestrator
@@ -61,3 +70,28 @@ services:
       - order-service
       - shipment-orchestrator
       - drone-service
+
+  postgres-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: shipping_records
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secretpassword
+    ports:
+      - "5432:5432"
+    # Optional: uncomment the next lines if you want the data to survive container restarts
+    # volumes:
+    #   - pgdata:/var/lib/postgresql/data
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+
+# Optional companion block if volumes are used above
+# volumes:
+#   pgdata:

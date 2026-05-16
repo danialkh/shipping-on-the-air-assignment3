@@ -165,9 +165,4 @@ def health():
 
 @app.get("/metrics")
 def metrics():
-    print("Metrics endpoint called")
-    print(f"ORCHESTRATOR_EVENTS_TOTAL: {ORCHESTRATOR_EVENTS_TOTAL.collect()}");
-    print(f"ORCHESTRATOR_LATENCY: {ORCHESTRATOR_LATENCY.collect()}");
-    print(f"ORCHESTRATOR_CONSUMER_ERRORS: {ORCHESTRATOR_CONSUMER_ERRORS.collect()}");
-    print(f"ORCHESTRATOR_READY: {ORCHESTRATOR_READY.collect()}");
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)

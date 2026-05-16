@@ -100,6 +100,9 @@ def consume_loop():
                     ev = msg.value
                     recv_ms = int(time.time() * 1000)
                     if isinstance(ev, dict) and ev.get("event_type") == "DroneAssigned":
+
+                        print(f"Received DroneAssigned event for drone_id={ev.get('drone_id')} order_id={ev.get('order_id')}")
+
                         handle_assignment(ev, recv_ms)
                         DRONE_EVENTS_CONSUMED.labels("DroneAssigned").inc()
                     else:

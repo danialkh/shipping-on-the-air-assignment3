@@ -12,9 +12,9 @@ The application is built using three primary microservices operating in harmony:
 3. **Drone Service:** Manages autonomous drone fleet distribution, battery states, and dispatch pathing calculations.
 
 ---
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/bf645c8e-4a28-492f-a9d0-b290cb315b48" />
+<img width="1408" height="768" alt="Gemini_Generated_Image_wcwbkywcwbkywcwb (1)" src="https://github.com/user-attachments/assets/032f3892-d06e-4492-9cb9-62f2dc1ed73f" />
+<img width="1408" height="768" alt="Gemini_Generated_Image_e55a45e55a45e55a" src="https://github.com/user-attachments/assets/67193e67-770f-4adb-ab21-29bee4ecf5d1" />
 
-<img width="1408" height="768" alt="Gemini_Generated_Image_wcwbkywcwbkywcwb" src="https://github.com/user-attachments/assets/5e3fd760-91c2-4247-ac12-a990839bd069" />
 
 
 ## 🚀 Getting Started

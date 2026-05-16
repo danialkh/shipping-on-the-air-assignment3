@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: order-service
+    static_configs:
+      - targets: ["order-service:8001"]
+    metrics_path: /metrics
+
+  - job_name: shipment-orchestrator
+    static_configs:
+      - targets: ["shipment-orchestrator:8002"]
+    metrics_path: /metrics
+
+  - job_name: drone-service
+    static_configs:
+      - targets: ["drone-service:8003"]
+    metrics_path: /metrics

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shipping-kafka
+  namespace: shipping-on-the-air
+data:
+  bootstrap.servers: "kafka:9092"
